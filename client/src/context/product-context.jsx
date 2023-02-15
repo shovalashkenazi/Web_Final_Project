@@ -8,6 +8,7 @@ const getParams = (key, value) => (value ? `${key}=${value}&` : "");
 
 export const ProductContext = React.createContext({
   products: [],
+  cart: [],
   cartTotal: 0,
   addToCart: () => {},
   purchaseCart: () => Promise.resolve(),
@@ -35,7 +36,9 @@ export function ProductsContextProvider({ children }) {
     getCountByCategory();
     getAuth().onAuthStateChanged((user) => {
       if (user) {
-        fetcher("/users/cart").then((cartItems) => setCart(cartItems));
+        fetcher("/users/cart").then((cartItems) => {
+          setCart(cartItems);
+        });
       }
     });
   }, []);
@@ -111,6 +114,7 @@ export function ProductsContextProvider({ children }) {
   };
   const saveCart = async (user) => {
     const idToken = await user.getIdToken();
+    console.log(cart);
     const response = await fetch(`${domain}/users/cart/${user.uid}`, {
       headers: {
         "Content-Type": "application/json",
@@ -136,6 +140,7 @@ export function ProductsContextProvider({ children }) {
 
   const addToCart = (product) => {
     setCart((prevCart) => {
+      console.log(product._id);
       const index = prevCart.findIndex((p) => p.product._id === product._id);
       if (index === -1) {
         return [...prevCart, { product, quantity: 1 }];
@@ -151,7 +156,10 @@ export function ProductsContextProvider({ children }) {
     });
   };
 
-  const cartTotal = cart.reduce((total, cartItem) => total, 0);
+  const cartTotal = cart.reduce(
+    (total, cartItem) => total + cartItem.product.price * cartItem.quantity,
+    0
+  );
 
   const value = {
     products,

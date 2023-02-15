@@ -6,10 +6,10 @@ import Meta from "../components/Meta";
 import { ProductContext } from "../context/product-context";
 import { AiFillDelete } from "react-icons/ai";
 
-export const Cart2 = () => {
+export const Cart = () => {
   const [grid, setGrid] = useState(4);
   const { cart, cartTotal, purchaseCart } = useContext(ProductContext);
-
+  console.log(cart);
   const navigate = useNavigate();
 
   const handleBuyNow = async () => {
@@ -40,7 +40,10 @@ export const Cart2 = () => {
               </div>
               {cart.map((cartItem) => {
                 return (
-                  <div className="cart-data py-3 d-flex justify-content-between align-items-center">
+                  <div
+                    key={cartItem.product._id}
+                    className="cart-data py-3 d-flex justify-content-between align-items-center"
+                  >
                     <div className="cart-col-1 gap-15 d-flex align-items-center">
                       <div className="w-25">
                         <img
@@ -98,4 +101,4 @@ export const Cart2 = () => {
   );
 };
 
-export default Cart2;
+export default Cart;
