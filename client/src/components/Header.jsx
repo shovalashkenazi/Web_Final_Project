@@ -27,7 +27,7 @@ function Header({ user }) {
           <div className="row align-items-center">
             <div className="col-2">
               <h2>
-                <Link className="text-white"> Shoval Project </Link>
+                <Link className="text-white"> iShop</Link>
               </h2>
             </div>
 
