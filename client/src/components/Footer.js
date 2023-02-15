@@ -103,8 +103,7 @@ function Footer() {
           <div className="row">
             <div className="col-12">
               <p className=" text-center mb-0 text-white">
-                &copy; {new Date().getFullYear()} ; Develop by - Shoval
-                Ashkenazi -
+                &copy; {new Date().getFullYear()} ; Develop by - Shoval, Ariel & Yuval -
               </p>
             </div>
           </div>
