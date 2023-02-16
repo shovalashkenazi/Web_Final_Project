@@ -22,7 +22,9 @@ function Home() {
                   <h4>SUPERCHARGED FOR PROS.</h4>
                   <h5>iPad S13+ Pro.</h5>
                   <p>From $999.00 or $41.62/mo.</p>
-                  <Link className="button"> BUY NOW</Link>
+                  <Link to={"/store/Computers & Laptops"} className="button">
+                    BUY NOW
+                  </Link>
                 </div>
               </div>
             </div>
@@ -181,7 +183,7 @@ function Home() {
         <div className="container-xxl">
           <div className="row">
             <div className="col-12">
-              <h3 className="section-heading"> Our Popular Product </h3>
+              <h3 className="section-heading"> Our Location </h3>
             </div>
           </div>
           <div className="row">

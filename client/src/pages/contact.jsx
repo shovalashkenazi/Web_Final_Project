@@ -22,51 +22,6 @@ function Contact() {
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
-
-            <div className="col-12 mt-5">
-              <div className="contact-inner-wrapper d-flex justify-content-between">
-                <div>
-                  <h3 className="contact-title mb-4">Contact</h3>
-                  <form className="d-flex flex-column gap-15">
-                    <div>
-                      <input
-                        type="text"
-                        className="form-controll"
-                        placeholder="name"
-                      ></input>
-                    </div>
-                    <div>
-                      <input
-                        type="email"
-                        className="form-controll"
-                        placeholder="email"
-                      ></input>
-                    </div>
-                    <div>
-                      <input
-                        type="tel"
-                        className="form-controll"
-                        placeholder="Phone Number"
-                      ></input>
-                    </div>
-                    <div>
-                      <textarea
-                        name=""
-                        id=""
-                        className="w-100 formm-controll"
-                        cols="30"
-                        row="4"
-                        placeholder="Comments"
-                      ></textarea>
-                    </div>
-                    <div className="button">Submit</div>
-                  </form>
-                </div>
-                <div>
-                  <h3 className="contact-title mb-4">Get In touch with us</h3>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>
